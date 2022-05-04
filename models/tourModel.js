@@ -56,7 +56,7 @@ const tourSchema = new mongoose.Schema(
       type: Number,
       validate: {
         validator: function (val) {
-          console.log(this);
+          // console.log(this);
           return val < this._update.$set.price;
         },
         message: `Discount price ({VALUE}) should be below regular price.`,
@@ -152,7 +152,7 @@ tourSchema.pre('save', function (next) {
 tourSchema.pre(/^find/, function () {
   this.find({ secretTour: { $ne: true } }); //this references the current query
   this._start = Date.now();
-  console.log(`Query started on ${this.start}`);
+  // console.log(`Query started on ${this.start}`);
   // next();
 });
 tourSchema.pre(/^find/, function (next) {
@@ -162,11 +162,11 @@ tourSchema.pre(/^find/, function (next) {
   });
   next();
 });
-tourSchema.post(/^find/, function (docs, next) {
-  //run after query execution
-  console.log(`Query took ${Date.now() - this._start} milliseconds`); //this references the current query
-  next();
-});
+// tourSchema.post(/^find/, function (docs, next) {
+//   //run after query execution
+//   console.log(`Query took ${Date.now() - this._start} milliseconds`); //this references the current query
+//   next();
+// });
 // tourSchema.pre('aggregate', function (next) {
 //   this.pipeline().unshift({ $match: { secretTour: { $ne: true } } }); //this references the current aggregation object
 //   next();
