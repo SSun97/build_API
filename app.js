@@ -2,7 +2,7 @@ const path = require('path');
 const express = require('express');
 
 const app = express();
-
+app.enable('trust proxy');
 const morgan = require('morgan');
 const ratelimit = require('express-rate-limit');
 const helmet = require('helmet');
