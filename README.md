@@ -22,3 +22,14 @@
 
 How to view the details of each tour - click the details button on each card
 How to book the tour - log in first and click "Book the tour now" button on the bottom.
+
+✨ API document is on: [HERE](https://documenter.getpostman.com/view/19797749/UyrBhvk2)
+
+## Further Plan
+- Adding Sign up page
+- Remove AWS SES restrictions to allow unregistered clients to sign up and reset passwords by receiving emails
+
+## Author
+- Simon Sun: summingyu.97@gmail.com
+
+## I welcome your comments and advices!
