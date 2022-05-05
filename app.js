@@ -11,6 +11,7 @@ const xss = require('xss-clean');
 const hpp = require('hpp');
 const cookieParser = require('cookie-parser');
 const compression = require('compression');
+const cors = require('cors');
 const AppError = require('./utils/appError');
 const globalErrorHandler = require('./controllers/errorController');
 const tourRouter = require('./routes/tourRoutes');
@@ -18,7 +19,15 @@ const userRouter = require('./routes/userRoutes');
 const reviewRouter = require('./routes/reviewRoutes');
 const bookingRouter = require('./routes/bookingRoutes');
 const viewRouter = require('./routes/viewRoutes');
-
+app.use(cors());
+// only for simple requests which are GET, POST others are not allowed
+// access-control-allow-origin *
+// api.natours.com, front-end natours.com
+// aoo,use(cors({
+//   origin: 'http://localhost:3000' // allow to server to accept request from different origin
+// }));
+app.options('*', cors());
+//app.options('/api/v1/tours/:id', cors()); // only allow to access to the specific route
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
 // 1) GLOBAL MIDDLEWARES
