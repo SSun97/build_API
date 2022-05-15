@@ -14,7 +14,7 @@
 
 ✨ Website is on: [HERE](https://natours-simon.herokuapp.com/). Not available on mobile and tablet yet.
 - for testing login 
-    - email: testuser@example
+    - email: testuser@example.com
     - password: test1234
 - for testing bookings system
     - Test credit card number: 4242 4242 4242 4242 4242
